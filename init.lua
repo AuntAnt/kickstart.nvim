@@ -162,7 +162,11 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+-- vim.o.autoindent = true
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
 vim.o.tabstop = 4
+vim.o.softtabstop = 4
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -677,7 +681,7 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         zls = {
-          -- cmd = { '/usr/local/bin/zls' },
+          cmd = { '/usr/local/bin/zls' },
         },
 
         lua_ls = {
@@ -960,6 +964,9 @@ require('lazy').setup({
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
       require('mini.pairs').setup()
+
+      -- - gm  - duplicat line
+      require('mini.operators').setup()
     end,
   },
   { -- Highlight, edit, and navigate code
